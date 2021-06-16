@@ -6,17 +6,21 @@ import API from "../utils/API";
 class SearchResultContainer extends Component {
   state = {
     search: "",
-    results: []
-  };
+    results: [],
+    resets: []
+  }
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
-    this.searchGiphy("kittens");
+    this.searchEmployee();
+    
   }
 
-  searchGiphy = query => {
-    API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
+  searchEmployee = () => {
+    API.search()
+      .then(res => {this.setState({ results: res.data.results, resets: res.data.results })
+      console.log(res.data.results);
+    })
       .catch(err => console.log(err));
   };
 
@@ -24,14 +28,23 @@ class SearchResultContainer extends Component {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
-      [name]: value
+      [name]: value,
+      results: this.state.results.filter(employee => employee.name.first.includes(this.state.search)),
     });
+    if (this.state.search === "") {
+      this.setState({
+        results: this.state.resets
+      })
+    }
   };
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
+  // When the form is submitted, search the Employee API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchGiphy(this.state.search);
+    let filterEmployees = this.state.results.filter(employee => employee.name.first.includes(this.state.search))
+    this.setState({
+      results: filterEmployees
+    })
   };
 
   render() {
