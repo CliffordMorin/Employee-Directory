@@ -8,23 +8,25 @@ class SearchResultContainer extends Component {
     search: "",
     results: [],
     resets: []
-  }
+  };
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
     this.searchEmployee();
-    
   }
 
   searchEmployee = () => {
     API.search()
-      .then(res => {this.setState({ results: res.data.results, resets: res.data.results })
-      console.log(res.data.results);
-    })
-      .catch(err => console.log(err));
+      .then((res) => {
+        this.setState({ results: res.data.results, resets: res.data.results });
+        console.log(res.data.results);
+      })
+      .catch((err) => console.log(err));
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
+    
+    event.preventDefault();
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
@@ -39,12 +41,14 @@ class SearchResultContainer extends Component {
   };
 
   // When the form is submitted, search the Employee API for `this.state.search`
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
-    let filterEmployees = this.state.results.filter(employee => employee.name.first.includes(this.state.search))
+    let filterEmployees = this.state.results.filter((employee) =>
+      employee.name.first.includes(this.state.search)
+    );
     this.setState({
-      results: filterEmployees
-    })
+      results: filterEmployees,
+    });
   };
 
   render() {

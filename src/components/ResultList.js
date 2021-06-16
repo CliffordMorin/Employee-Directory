@@ -3,14 +3,14 @@ import React from "react";
 function ResultList(props) {
   return (
 
-    <table class="table">
+    <table className="table">
   <thead>
     <tr>
       <th scope="col">Picture</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phone Number</th>
+      <th scope="col"><span onClick = {() => props.sortBy("first")}>First</span></th>
+      <th scope="col"><span onClick = {() => props.sortBy("last")}>last</span></th>
+      <th scope="col"><span onClick = {() => props.sortBy("email")}>Email</span></th>
+      <th scope="col"><span onClick = {() => props.sortBy("phone")}>Phone Number</span></th>
     </tr>
   </thead>
   <tbody>
