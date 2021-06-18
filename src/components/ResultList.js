@@ -7,10 +7,10 @@ function ResultList(props) {
   <thead>
     <tr>
       <th scope="col">Picture</th>
-      <th scope="col"><span onClick = {() => props.sortBy("first")}>First</span></th>
-      <th scope="col"><span onClick = {() => props.sortBy("last")}>last</span></th>
-      <th scope="col"><span onClick = {() => props.sortBy("email")}>Email</span></th>
-      <th scope="col"><span onClick = {() => props.sortBy("phone")}>Phone Number</span></th>
+      <th scope="col"><span onClick = {(e) => props.sortEmployeesByName(e)}>First</span></th>
+      <th scope="col">last</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone Number</th>
     </tr>
   </thead>
   <tbody>

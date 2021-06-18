@@ -7,7 +7,8 @@ class SearchResultContainer extends Component {
   state = {
     search: "",
     results: [],
-    resets: []
+    resets: [],
+    sortedUsers: []
   };
 
   // When this component mounts, search the Giphy API for pictures of kittens
@@ -28,16 +29,30 @@ class SearchResultContainer extends Component {
     
     event.preventDefault();
     const name = event.target.name;
-    const value = event.target.value;
+    const value = event.target.value.toLowerCase();
     this.setState({
       [name]: value,
-      results: this.state.results.filter(employee => employee.name.first.includes(this.state.search)),
+      results: this.state.resets.filter(employee => employee.name.first.toLowerCase().includes(value)),
     });
-    if (this.state.search === "") {
-      this.setState({
-        results: this.state.resets
-      })
-    }
+    console.log(value);
+    // if (this.state.search === "") {
+    //   this.setState({
+    //     results: this.state.resets
+    //   })
+    // }
+  };
+
+  sortEmployeesByName = (event) => {
+    
+    event.preventDefault();
+    console.log("Hi");
+    const sortedUsers2 = this.state.results.sort((a, b) => {
+      return a.name.first.toLowerCase().localeCompare(b.name.first.toLowerCase())
+    })
+    console.log(sortedUsers2);
+    this.setState({
+      sortedUsers: sortedUsers2
+    })
   };
 
   // When the form is submitted, search the Employee API for `this.state.search`
@@ -49,6 +64,11 @@ class SearchResultContainer extends Component {
     this.setState({
       results: filterEmployees,
     });
+    // if (this.state.search === "") {
+    //   this.setState({
+    //     results: this.state.resets
+    //   })
+    // }
   };
 
   render() {
@@ -59,7 +79,10 @@ class SearchResultContainer extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} />
+        <ResultList 
+          results={this.state.results} 
+          sortEmployeesByName={this.sortEmployeesByName}
+        />
       </div>
     );
   }
