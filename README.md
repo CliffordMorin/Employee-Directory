@@ -19,7 +19,7 @@
 
 ## Description
 
-This application is a Employee Directory created with React. You can search for employee's by first name. Then you can easily view the employee's Full name, picture, email, and phone number. There is also an option to sort the employee's by first name in alphabetical order. This application required me to break up the application's UI into components, manage component state, and respond to user events.
+This application is a Employee Directory created with React. You can search for employee's by first name. Then you can easily view the employee's Full name, picture, email, and phone number. There is also an option to sort the employee's by first name in alphabetical order by clicking on the icon next to first name header. This application required me to break up the application's UI into components, manage component state, and respond to user events.
 
 An employee or manager would benefit greatly from being able to view non-sensitive data about other employees.
 
