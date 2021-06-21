@@ -7,9 +7,9 @@
     <img src="https://img.shields.io/github/languages/code-size/CliffordMorin/Employee-Directory?style=plastic" alt="Code Size" />
     <img src="https://img.shields.io/github/repo-size/CliffordMorin/Employee-Directory?style=plastic" alt="Repo Size" />   
     <img src="https://img.shields.io/tokei/lines/github/CliffordMorin/Employee-Directory?style=plastic" alt="Total Lines" />
-    <img src="https://img.shields.io/github/package-json/dependency-version/CliffordMorin/Employee-Directory/express?style=plastic" alt="Express Version" />
-    <img src="https://img.shields.io/github/package-json/dependency-version/CliffordMorin/Employee-Directory/mongoose?style=plastic" alt="Mongoose Version" />
-    <img src="https://img.shields.io/github/package-json/dependency-version/CliffordMorin/Employee-Directory/morgan?style=plastic" alt="Morgan Version" />
+    <img src="https://img.shields.io/github/package-json/dependency-version/CliffordMorin/Employee-Directory/react?style=plastic" alt="React Version" />
+    <img src="https://img.shields.io/github/package-json/dependency-version/CliffordMorin/Employee-Directory/bootstrap?style=plastic" alt="bootstrap Version" />
+    <img src="https://img.shields.io/github/package-json/dependency-version/CliffordMorin/Employee-Directory/axios?style=plastic" alt="axios Version" />
     <img src="https://img.shields.io/github/last-commit/CliffordMorin/Employee-Directory?style=plastic" alt="Last Commit" />  
     <img src="https://img.shields.io/github/issues/CliffordMorin/Employee-Directory?style=plastic" alt="Issues" />  
     <img src="https://img.shields.io/github/followers/CliffordMorin?style=social" alt="Followers" />  
@@ -26,7 +26,8 @@ An employee or manager would benefit greatly from being able to view non-sensiti
 ## User Story
 
 ```
-As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+As a user, I want to be able to view my entire employee directory at
+once so that I have quick access to their information.
 ```
 
 ## Table of Contents
