@@ -41,7 +41,7 @@ once so that I have quick access to their information.
 
 ## Usage
 
-![Demo](public/Images/demo.gif)
+![Demo](public/images/demo.gif)
 
 ## Links
 
